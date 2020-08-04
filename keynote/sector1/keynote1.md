@@ -34,3 +34,34 @@
 
 以过程作为参数或者以过程作为返回
 
+```
+(define (<name> a b)
+  (if (> a b )
+    0
+    (+ (<term> a)
+       (name (next a) b))))
+```
+
+如果对于上述的抽象过程，其实可以变成把term 和next 是函数传递进来变成下面的样子
+
+```
+(define (sum term  a next b )
+  (if (> a b )
+    0
+    (+ (term a)
+       (sum term (next a) next b))))
+```
+
+可以变成这个样子来进行处理
+
+
+```
+(define (sum term a next b)
+    (define (iter a result)
+        (if (> a b)
+            result
+            (iter (next a)
+                  (+ (term a) result))))
+    (iter a 0))
+```
+此段代码可以立即为迭代的实现
