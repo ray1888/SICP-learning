@@ -25,3 +25,15 @@ cdr  获取除第一个元素的剩余元素，为另外的list
 (numer  x)  / (denom x)  = n / d
 
 make-rat的操作其实可以完全使用过程来进行实现
+
+
+we can think of data as defined by some collection of selectors and constructors
+
+
+the ability to
+manipulate procedures as objects automatically provides the ability to
+represent compound data
+
+
+procedural representations of data will play a central role in our programming
+repertoire. is style of programming is often called message passing,
